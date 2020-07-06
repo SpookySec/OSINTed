@@ -287,7 +287,7 @@ while True:
                         if option.upper() == "Y":
                             print(info + white + "Updating..." + end)
                             time.sleep(2)
-                            input(info + white + "Press Enter to finish: ")
+                            input(info + white + "Spam Enter to finish: ")
                             Update()
                             print(good + white + "Done!" + end)
                             print(info + white + "Exiting..." + end)
