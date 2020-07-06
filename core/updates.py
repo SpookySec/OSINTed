@@ -1,1 +1,1 @@
-updates = "new metadata coming soon:this is just a test:pls work"
+updates = "brand new metadata module"
