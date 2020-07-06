@@ -47,7 +47,7 @@ while True:
                     print(info + yellow + "Usage: " + green + f"{argv[0]}")
                 else:
                     PathComplete()
-                    img = input(run + white + f"Path to file (use{green} Tab{end}): " + end)
+                    img = input(run + white + f"Path to file (use{green} Tab{white}): " + end)
                     try:
                         fileType = GetType(img)
                         print(run + white + "Analyzing file...")
