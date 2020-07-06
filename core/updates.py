@@ -1,1 +1,1 @@
-updates = "it works!"
+updates = "metadata now works:added JPG support for metadata"
