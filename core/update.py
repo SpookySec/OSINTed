@@ -24,3 +24,4 @@ def Update():
     path = "/".join(currentPath)
     os.system(f"git clone --quiet https://github.com/SpookySec/OSINTed {folder}")
     os.system(f"cp -r {path}/{folder}/* {path} && rm -r {path}/{folder}/ 2>/dev/null")
+    os.system(f"rm -r {path}/{folder}/{folder}")

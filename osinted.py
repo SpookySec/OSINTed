@@ -285,12 +285,12 @@ while True:
                         option = input(que + white + "Would you like to install the update [" + 
                         green + "Y" + white + "/" + red + "N" + white + "]: ")
                         if option.upper() == "Y":
+                            break
                             print(info + white + "Updating..." + end)
                             Update()
                             print(good + white + "Done!" + end)
                             print(info + white + "Exiting..." + end)
                             sys.exit(0)
-                            break
                         elif option.upper() == "N":
                             print(bad + white + "Too bad :(")
                             break
