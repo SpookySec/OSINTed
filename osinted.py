@@ -16,6 +16,7 @@ from modules.module_mac import GetVendor
 from modules.module_passbreach import CheckPassword
 from modules.module_portscan import PortScan
 from modules.module_instagram import Instagram
+from modules.module_metadata import ImageJPG, GetType
 from urllib.error import HTTPError
 from sherlock.site_list import SherlockUpdate
 from sherlock.sherlock.sherlock import UserSearch
@@ -41,8 +42,45 @@ while True:
 
             # META DATA
             if cmd.split()[0] == "metadata":
-                print(good + white + "Coming soon...")
-            
+                argv = cmd.split()
+                if len(argv) != 1:
+                    print(info + yellow + "Usage: " + green + f"{argv[0]}")
+                else:
+                    PathComplete()
+                    img = input(run + white + f"Path to file (use{green} Tab{end}): " + end)
+                    try:
+                        fileType = GetType(img)
+                        print(run + white + "Analyzing file...")
+                        if fileType == "jpg" or fileType == "jpeg":
+                            image = ImageJPG(img)
+                            print(good + white + "JFIF Version: " + yellow + image.GetJFIFVersion())
+                            print(good + white + "MIME Type: " + yellow + image.GetMime())
+                            print(good + white + "Image Height: " + yellow + image.GetHeight())
+                            print(good + white + "Image Width: " + yellow + image.GetWidth())
+                            print(good + white + "Image Size: " + yellow + image.GetImageSize())
+                            print(good + white + "X Resolution: " + yellow + image.GetXRes())
+                            print(good + white + "Y Resolution: " + yellow + image.GetYRes())
+                            print(good + white + "Resolution Unit: " + yellow + image.GetResUnit())
+                            print(good + white + "File Size: " + yellow + image.GetFileSize())
+                            print(good + white + "File Permissions: " + yellow + image.GetPerms())
+                            try:
+                                print(good + white + "Exif Byte Order: " + yellow + image.GetByteOrder())
+                            except:
+                                pass
+                            try:
+                                print(good + white + "Oreientation: " + yellow + image.GetOrientation())
+                            except:
+                                pass
+                        else:
+                            print(bad + red + "Sorry, only supports JPG files currently!")
+                            print(bad + red + "Current file type: " + white + GetType(img))            
+                    except ValueError:
+                        print(bad + red + "File not found!" + end)
+                    except Exception as error:
+                        print(bad + red + "An unknown error as occurred...")
+                        print(bad + red + "Error: " + white + error)
+            HistoryClear()
+            CommandComplete()
             # INSTAGRAM OSINT
             if cmd.split()[0] == "instainfo":
                 argv = cmd.split()
@@ -142,7 +180,7 @@ while True:
                         print(info + yellow + "Usage: " + green + f"{argv[0]}" + end)
                     else:
                         PathComplete()
-                        img = input(good + white + "Enter the path to the picture: " + end)
+                        img = input(good + white + f"Enter the path to the picture (use {green}Tab{end}): " + end)
                         ext = img.split(".")[-1]
                         if ext == "jpg" or ext == "png" or ext == "jpeg" or ext == "gif" or ext == "bmp" or ext == "tif" or ext == "webp":
                             try:
