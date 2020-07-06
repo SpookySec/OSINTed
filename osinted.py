@@ -79,8 +79,8 @@ while True:
                     except Exception as error:
                         print(bad + red + "An unknown error as occurred...")
                         print(bad + red + "Error: " + white + error)
-            HistoryClear()
-            CommandComplete()
+                HistoryClear()
+                CommandComplete()
             # INSTAGRAM OSINT
             if cmd.split()[0] == "instainfo":
                 argv = cmd.split()
