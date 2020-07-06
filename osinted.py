@@ -275,9 +275,9 @@ while True:
             # UPDATE
             if cmd.split()[0] == "update":
                 print(run + white + "Checking for updates..." + end)
-                if CheckUpdate("https://raw.githubusercontent.com/SpookySec/OSINTed/master/updates.py"):
+                if CheckUpdate("https://raw.githubusercontent.com/SpookySec/OSINTed/master/core/updates.py"):
                     print(good + white + "There's an update!" + end)
-                    new_stuff = NewStuff("https://raw.githubusercontent.com/SpookySec/OSINTed/master/updates.py")
+                    new_stuff = NewStuff("https://raw.githubusercontent.com/SpookySec/OSINTed/master/core/updates.py")
                     print(info + white + "New stuff: " + end)
                     for thing in new_stuff:
                         print(yellow + f"\t- {thing}\n", end="")
