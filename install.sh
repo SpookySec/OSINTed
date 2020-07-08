@@ -7,9 +7,10 @@ clear
 echo "Installing now..."
 sudo apt install whois
 sudo apt install exiftool
-pip3 install requests
-pip3 install mac-vendor-lookup
-pip3 install readline
-pip3 install phonenumbers
-pip3 install whois
-pip3 install pyhibp
+python3 -m pip install requests
+python3 -m pip install mac-vendor-lookup
+python3 -m pip install readline
+python3 -m pip install phonenumbers
+python3 -m pip install whois
+python3 -m pip install pyhibp
+python3 -m pip install pyexifinfo

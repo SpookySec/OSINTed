@@ -1,13 +1,10 @@
 import requests
-import json
 from six.moves.urllib.request import urlopen
 
 class Instagram:
     def __init__(self, username): 
         link = "https://www.instagram.com/"+username+"/?__a=1"
-        response = urlopen(link)
-        final_process = "".join(map(chr, response.read()))
-        self.parsed = json.loads(final_process)
+        self.parsed = requests.get(link).json()
 
     def username(self):
         return str(self.parsed["graphql"]["user"]["username"])

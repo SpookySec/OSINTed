@@ -1,1 +1,1 @@
-updates = "metadata now works:added JPG support for metadata"
+updates = "fixed instainfo not working for some people:minor bug fixes"
