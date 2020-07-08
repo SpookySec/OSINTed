@@ -1,1 +1,1 @@
-updates = "metadata now works:added JPG support for metadata"
+updates = "just fixed a pyexifinfo error in install.sh:I hope you're enjoying :)"
