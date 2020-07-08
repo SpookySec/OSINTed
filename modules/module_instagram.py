@@ -1,5 +1,4 @@
 import requests
-from six.moves.urllib.request import urlopen
 
 class Instagram:
     def __init__(self, username): 
