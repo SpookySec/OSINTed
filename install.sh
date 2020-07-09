@@ -14,4 +14,4 @@ python3 -m pip install phonenumbers
 python3 -m pip install whois
 python3 -m pip install pyhibp
 python3 -m pip install pyexifinfo
-python3 -m pip install requests_future
+python3 -m pip install requests_futures
