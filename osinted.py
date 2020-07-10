@@ -81,6 +81,7 @@ while True:
                         print(bad + red + "Error: " + white + error)
                 HistoryClear()
                 CommandComplete()
+
             # INSTAGRAM OSINT
             if cmd.split()[0] == "instainfo":
                 argv = cmd.split()
@@ -90,28 +91,28 @@ while True:
                 else:
                     try:
                         username = Instagram(argv[1])
-                        print(good + white + "User: " + yellow + argv[1] + white + " exists!" + end)
-                        print(run + white + "Getting information now..." + end)
-                        time.sleep(2)
-                        print(good + white + "Username: " + yellow + username.username())
-                        print(good + white + "User ID: " + yellow + username.user_id())
-                        print(good + white + "FullName: " + yellow + username.fullname())
-                        print(good + white + "Followers: " + yellow + username.followers())
-                        print(good + white + "Following: " + yellow + username.following())
-                        print(good + white + "Posts: " + yellow + username.posts())
-                        print(good + white + "Url: " + yellow + username.url())
-                        print(good + white + "Is verified: " + yellow + username.verified())
-                        print(good + white + "Is private: " + yellow + username.private())
-                        print(good + white + "Is a business account: " + yellow + str(username.business()))
-                        if username.business():
-                            print(good + white + "Business category: " + yellow + username.business_category())
-                        print(good + white + "HD Profile picture: \n" + yellow + username.profile_pic())
+                        if username.isValid():
+                            print(good + white + "User: " + yellow + argv[1] + white + " exists!" + end)
+                            print(run + white + "Getting information now..." + end)
+                            time.sleep(2)
+                            print(good + white + "Username: " + yellow + username.username())
+                            print(good + white + "User ID: " + yellow + username.user_id())
+                            print(good + white + "FullName: " + yellow + username.fullname())
+                            print(good + white + "Followers: " + yellow + username.followers())
+                            print(good + white + "Following: " + yellow + username.following())
+                            print(good + white + "Posts: " + yellow + username.posts())
+                            print(good + white + "Url: " + yellow + username.url())
+                            print(good + white + "Is verified: " + yellow + username.verified())
+                            print(good + white + "Is private: " + yellow + username.private())
+                            print(good + white + "Is a business account: " + yellow + str(username.business()))
+                            if username.business():
+                                print(good + white + "Business category: " + yellow + username.business_category())
+                            print(good + white + "HD Profile picture: \n" + yellow + username.profile_pic())
+                            
+                            print(good + white + "Biography: \n" + yellow + username.bio())
+                        else:
+                            print(bad + red + "Username: " + yellow + argv[1] + red + " not found!")
                         
-                        print(good + white + "Biography: \n" + yellow + username.bio())
-
-
-                    except HTTPError:
-                        print(bad + red + "Username: " + yellow + argv[1] + red + " not found!")
                     except:
                         print(bad + red + "An unknown error has occurred!" + end)
                         

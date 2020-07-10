@@ -33,7 +33,7 @@ class Instagram:
         return str(self.parsed["graphql"]["user"]["external_url"])
     
     def business(self):
-        return self.parsed["graphql"]["user"]["is_business_account"]
+        return str(self.parsed["graphql"]["user"]["is_business_account"])
     
     def recently(self):
         return str(self.parsed["graphql"]["user"]["is_joined_recently"])
@@ -46,3 +46,10 @@ class Instagram:
 
     def business_category(self):
         return str(self.parsed["graphql"]["user"]["business_category_name"])
+
+    def isValid(self):
+        try:
+            str(self.parsed["graphql"]["user"]["username"])
+            return True
+        except KeyError:
+            return False
