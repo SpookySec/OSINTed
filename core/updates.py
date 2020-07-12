@@ -1,1 +1,1 @@
-updates = "fixed instainfo showing user not found"
+updates = "just a test"
