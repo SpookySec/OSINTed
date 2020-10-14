@@ -1,1 +1,1 @@
-updates = "added new stuff;new module"
+updates = "added new stuff:new module:removed phoneinfo"
