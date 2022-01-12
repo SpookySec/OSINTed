@@ -1,1 +1,1 @@
-updates = "removed nothing:removed some temp thing:lol just trying this out"
+updates = "Fixed a typo in osinted.py:Sorry guys, no new features :/"
