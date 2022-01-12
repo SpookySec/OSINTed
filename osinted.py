@@ -68,7 +68,7 @@ while True:
                             except:
                                 pass
                             try:
-                                print(good + white + "Oreientation: " + yellow + image.GetOrientation())
+                                print(good + white + "Orientation: " + yellow + image.GetOrientation())
                             except:
                                 pass
                         else:
@@ -234,7 +234,7 @@ while True:
                         print(run + white + "ISP: " + end + ip_address.isp)
                         print(run + white + "Mobile: " + end + ip_address.mobile)
                         print(run + white + "Proxy: " + end + ip_address.proxy)
-                        print(run + white + "Hosting Serivce: " + end + ip_address.hosting)
+                        print(run + white + "Hosting Service: " + end + ip_address.hosting)
 
             # WHO IS
             if cmd.split()[0] == "whois":
